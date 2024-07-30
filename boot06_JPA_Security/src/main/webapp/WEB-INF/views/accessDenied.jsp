@@ -6,6 +6,7 @@
 <title> </title>
 </head>
 <body>
- <h1>/common for guest</h1>
+ <h2>Sorry, you do not have permission to view this page. (403 접근금지 에러)</h2>
+ Click Login at <a href="login">로그인 페이지</a>
 </body>
 </html>
