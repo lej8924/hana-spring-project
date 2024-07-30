@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>타임리프</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+
+<script th:inline="javascript">
+ /* th:inline="javascript" 타임리프 속성을 사용하면 자바스크립트 내에서 타임리프 문법을 사용할 수 있다. */
+ 
+ var result = [[${result}]];
+ alert(result);
+ document.write("타임리프로 가져온값 :"+result+"<hr/>");
+</script>
+</body>
+</html>

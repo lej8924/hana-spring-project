@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Member"> <!-- 매퍼 네임스페이스 명을 Member로 지정함. -->
+<!-- mybatis 쿼리문을 다루는 태그를 mapper(매퍼)태그라고 부른다.  -->
+
+  <!-- 회원저장 -->
+  <insert id="m_in" parameterType="member">
+   <!-- parameterType은 전달인자타입이다. 생략가능함 -->
+   insert into tbl_member (userid,userpw,username,email,regdate)
+   values(#{userid},#{userpw},#{username},#{email},sysdate)
+   <!--  #{userid}는 자바코드로 표현하면 member.getUserid();와 같다. sysdate는 오라클 날짜함수이다. -->
+  </insert>
+</mapper>

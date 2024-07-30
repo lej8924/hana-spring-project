@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Test2">
+
+  <insert id="test2_in" parameterType="test2">
+    insert into tbl_test2 values(test_no_seq2.nextval, #{test_title}, #{test_cont})
+  </insert>
+  
+</mapper>

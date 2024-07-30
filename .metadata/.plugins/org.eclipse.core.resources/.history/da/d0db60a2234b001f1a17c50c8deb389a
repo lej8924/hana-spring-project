@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd" >
+
+<configuration>
+   <!-- 데이터 저장빈 클래스 객체 별칭이름을 관리해 주는 파일이다. -->
+   
+   <settings>
+        <setting name="jdbcTypeForNull" value="NULL"/>
+        <!-- mybatis null 피라미터값 insert,update 시 에러가 발생하는 것을 방지 즉 예방한다. -->
+    </settings>
+    
+   <typeAliases>     
+            <typeAlias type="net.daum.vo.BoardVO" alias="board" /> 
+            <!-- BoardVO빈클래스이 객체 별칭 이름을 board로 설정 -->
+   </typeAliases>
+</configuration>

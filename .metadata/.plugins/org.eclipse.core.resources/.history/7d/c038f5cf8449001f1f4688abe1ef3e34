@@ -1,0 +1,23 @@
+package net.daum.vo;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter //setter()메서드 자동생성
+@Getter //getter()메서드 자동생성
+@ToString //toString()메서드 자동생성
+@Entity //JPA를 다루는 엔티티빈 클래스
+@SequenceGenerator(//시퀀스 생성기
+		 name = "bno_seq8_gename", //시퀀스 제너레이터 이름
+		 sequenceName = "bno_seq8", //시퀀스 이름
+		 initialValue = 1, //시작번호값
+		 allocationSize = 1 //기본값 50, 1씩증가
+		)
+@Table(name="tbl_boards3") //tbl_boards3 테이블을 생성
+public class BoardVO {
+
+}

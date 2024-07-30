@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org" >
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="./css/th.css" /> 
+  </head>
+  <body>
+   <h1>ThymeLeaf 연습 페이지</h1>
+   <h2 class="thymeLeaf_css" th:text="${greeting}"></h2>
+   <hr/>
+   
+   <h3>맛난 포도</h3>
+   <img src="./images/grape.jpg" width="150px" height="100px" alt="포도" />
+   
+   <h3>맛난 참외</h3>
+   <img src="./images02/"
+   
+  </body>
+</html>

@@ -1,0 +1,9 @@
+package net.daum.vo;
+
+import lombok.Data;
+
+@Data //기본생성자,canEqual(),equals(),hashCode(),toString()
+public class SampleVO {
+
+	private String val01;
+}

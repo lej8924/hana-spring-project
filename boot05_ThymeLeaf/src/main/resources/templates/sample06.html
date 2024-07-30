@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>타임리프</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+ 
+ <table border="1" th:inline="text"> <!-- th:inline="text"타임리프 속성은 텍스트 블록내에서 타임리프 표현식을 사용하여 서버 측
+ 데이터를 삽입할수 있게 해준다. -->
+   <tr>
+    <th>회원아이디</th>
+    <th>회원이름</th>
+    <th>가입날짜</th>
+   </tr>
+   
+   <tr th:each="member:${list}">
+    <td>[[${member.mid}]]</td>
+    <td>[[${member.mname}]]</td>
+    <td>[[${member.regdate}]]</td>
+   </tr>
+ </table>
+ 
+ <hr/>
+ 
+ <div>[[${result}]]</div>
+ <div>[[${#vars.result}]]</div> <!-- 타임리프 표현식 객체 #vars.는 생략가능함. -->
+ 
+ <script th:inline="javascript">
+  //th:inline="javascript" 를 사용해서 자바스크립트 내에서 타임리프를 사용가능하게 해준다.
+  
+  var result= [[${result}]];
+  alert(result);
+ </script>
+</body>
+</html>
+
+
+
+
+
+

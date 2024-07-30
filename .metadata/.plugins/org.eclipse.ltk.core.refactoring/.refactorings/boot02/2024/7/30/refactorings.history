@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;BoardVO.java&apos; to &apos;boot03/src/main/java/net.daum.vo&apos;&#x0D;&#x0A;- Original project: &apos;boot02&apos;&#x0D;&#x0A;- Destination element: &apos;boot03/src/main/java/net.daum.vo&apos;&#x0D;&#x0A;- Original element: &apos;net.daum.vo.BoardVO.java&apos;" description="Copy compilation unit" destination="=boot03/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.vo" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.vo{BoardVO.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1721806414731" units="1" version="1.0"/>
+</session>

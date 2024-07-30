@@ -1,0 +1,13 @@
+INDEX VERSION 1.134
+D:\20240715_Spring\Spring_WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3477581097.index
+\Spring_Mvc\src\main\java
+D:\20240715_Spring\Spring_WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3618548466.index
+\Spring_Mvc\src\main\java
+D:\20240715_Spring\Spring_WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3127897525.index
+\boot06_JPA_Security\src\main\java
+D:\20240715_Spring\Spring_WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\323340243.index
+\Spring_Mvc\src\main\java
+D:\20240715_Spring\Spring_WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\652085665.index
+\SpringBoot_Project\src\main\java
+D:\20240715_Spring\Spring_WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3142754183.index
+\Spring_Mvc\src\main\java

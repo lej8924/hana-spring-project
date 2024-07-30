@@ -1,0 +1,14 @@
+package net.daum.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import net.daum.dao.Test2DAO;
+
+@Service
+public class Test2ServiceImpl implements Test2Service {
+
+	@Autowired
+	private Test2DAO test2Dao;
+	
+}

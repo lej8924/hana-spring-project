@@ -1,0 +1,43 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아작스댓글 연습 </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<%-- jsp주석문기호, jQuery CDN방식 --%>
+<style type="text/css">
+  #modDiv{
+    width:300px; height:100px;
+    background-color:gray;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-top: -50px;
+    margin-left:-150px;
+    padding:10px;
+    z-index:1000; /* position 속성이 absolute나 fixed로 설정된 곳에서 사용한다. 이 속성은 요소가 겹쳐지는 순서를 제어할 수 있다.
+    숫자값이 큰것이 앞에 나온다. */
+  } /* 댓글 수정폼 ui */
+</style>
+</head>
+<body>
+ <%-- 댓글수정 화면 --%>
+ <div id="modDiv" style="display:none;"> <%--display:none; css속성으로 댓글수정화면을 안나오게 함. --%>
+  <div class="modal-title"></div> <%--댓글번호--%>
+  <div>
+   <textarea rows="3" cols="30" id="replytext"></textarea>
+  </div> 
+  <div>
+   <button type="button" id="replyModBtn">댓글수정</button>
+   <button type="button" id="replyDelBtn">댓글삭제</button>
+   <button type="button" id="closeBtn" onclick="modDivClose();">닫기</button>
+  </div>
+ </div>
+ 
+ <h2></h2>
+</body>
+</html>
+
+
+

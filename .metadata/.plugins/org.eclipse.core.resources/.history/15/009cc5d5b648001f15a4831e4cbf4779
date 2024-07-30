@@ -1,0 +1,14 @@
+package net.daum.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class UploadController {
+
+	//동기식 파일첨부 뷰페이지
+	@GetMapping("/uploadForm")
+	public void uploadForm() {
+		//리턴 타입이 없는 void형이면 매핑주소인 uploadForm이 뷰페이지 파일명이 된다.
+	}//uploadForm()
+}

@@ -1,0 +1,15 @@
+package net.daum.dao;
+
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import net.daum.vo.BoardVO;
+
+public interface BoardRepository extends JpaRepository<BoardVO, Integer> {
+
+	public List<BoardVO> findBoardVOByTitle(String title);//쿼리메서드가 find+엔티티빈클래스명+By+컬럼명 =>제목으로 검색
+	
+	public Collection<BoardVO> findByWriter(String writer);//쿼리메서드가 findBy+엔티티빈변수명
+}

@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>타임리프</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+
+ <table border="1" th:with="target='u0001'"> <!-- th:with 타임리프 속성을 사용해서 특정한 범위내에서만 유효한 지역변수를 선언할
+ 수 있다. target이라는 변수 선언하고 u0001회원아이디를 저장. 이 변수는 table태그 내에서만 유효하다. -->
+  <tr>
+   <th>MID</th>
+   <th>MNAME</th>
+   <th>REGDATE</th>
+  </tr>
+  
+  <tr th:each="member :${list}">
+    <td th:text="${member.uid == target?'SECRET':member.uid}"></td>
+                <!--  삼항조건 연산자, 조건식?조건식이 참이면 실행: 조건식이 거짓이면 실행 -->
+  </tr>
+ </table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+package net.daum;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
+
+import lombok.extern.java.Log;
+import net.daum.dao.MemberRepository;
+import net.daum.dao.ProfileRepository;
+
+@SpringBootTest
+@Log
+@Commit //테스트 결과를 데이터베이스에 commit(커밋반영) 용도로 사용
+class Boot04ApplicationTests {
+
+	@Autowired
+	private MemberRepository memberRepo;
+	
+	@Autowired
+	private ProfileRepository profileRepo;
+	
+	
+}

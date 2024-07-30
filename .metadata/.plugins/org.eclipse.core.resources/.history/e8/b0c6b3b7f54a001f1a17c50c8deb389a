@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>타임리프</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+  <table border="1">
+    <tr>
+     <th>MID</th>
+     <th>MNAME</th>
+     <th>REGDATE</th>
+    </tr>
+    
+    <tr th:each="member: ${list}">
+      <td th:text="${member.mid}"></td>
+      <td th:text="${member.mname}"></td>
+      <td th:text="${#dates.format(member.regdate, 'yyyy-MM-dd')}"></td>
+    </tr>
+  </table>
+  
+  <hr/>
+  
+  <table border="1">
+    <tr>
+     <th>COUNT</th>
+     <th>SIZE</th>
+     <th>ODD/EVEN</th>
+     <th>MID</th>
+     <th>MNAME</th>
+     <th>REGDATE</th>
+    </tr>
+    
+    <tr th:each="member, count2 : ${list}">
+      <td th:text="${count2.count}"></td> <!-- count는 1부터 시작하는 번호 -->
+      <td th:text="${count2.size}"></td>
+    </tr>
+  </table>  
+</body>
+</html>
+
+
+
+
+
+
+
+

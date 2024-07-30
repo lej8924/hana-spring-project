@@ -1,0 +1,52 @@
+package net.daum.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class SampleController {
+
+	@RequestMapping("/thymeLeaf_begin")
+	public ModelAndView begin() {
+		
+		ModelAndView tm = new ModelAndView();
+		tm.addObject("greeting", "방갑습니다! 뷰템플릿 엔진 타임리프!");//문자열 키이름에 자바 최상위 클래스 Object타입으로 업캐스팅 한 값
+		//으로 저장
+		tm.setViewName("./thymeLeaf/start_thymeLeaf");//타임리프 뷰페이지 경로를 설정 => /src/main/resources/templates/
+		// thymeLeaf/start_thymeLeaf.html 이다. 결국 templates 폴더하위에 thymeLeaf폴더를 생성해야 한다.
+		return tm;
+	}//begin()
+	
+	/* get방식인 경우 예)
+	 * 
+	 *  1.서블릿에서 doGet()메서드를 오버라이딩 한경우는 get으로 접근할 때 호출된다.
+	 *  2.웹주소창에서 매핑주소를 직접 입력하는 경우
+	 *  3.자바스크립트의 location객체에 의해서 이동하는 경우
+	 *  4.하이퍼링크에서 이동하는 경우
+	 *  5.스프링 백엔드컨트롤단 다른 매핑주소로 이동할 때 사용하는 redirect:/도 get방식이다.
+	 *  6.jsp나 servlet 컨트롤러에서 response.sendRedirect()이동하는 경우  
+	 */
+	
+	@GetMapping("/listTest")
+	public void listTest() {
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

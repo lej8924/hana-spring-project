@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>타임리프</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+
+ <h1 th:text="${now}"></h1>
+ <h2 th:text="${#dates.format(now,'yyyy-MM-dd')}"></h2>
+ 
+ <div th:with="timeValue=${#dates.createToday()}"> <!-- th:with 타임리프 속성으로 timeValue라는 지역변수를 선언함. 이 지역변수
+ div태그내에서만 유효하다. -->
+  <p>[[${timeValue}]]</p>
+ </div>
+ 
+</body>
+</html>

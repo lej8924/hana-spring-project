@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>타임리프</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+ <h1 th:text="${vo}"></h1>
+ <hr/>
+ 
+ <div th:utext="${'<h2>' + vo.mid + '</h2>'}"></div> <!-- th:utext타임리트 속성은 html태그를 적용시킨다. -->
+ <div th:text="${'<h2>' + vo.mname + '</h2>'}"></div> <!-- th.text 타임리프 속성은 <를 &lt; 특수문자로 인식하고, >를 &gt;
+ 특수문자로 인식해서 <,>를 웹상에 그대로 출력한다. 결국 html태그를 적용안함. --> 
+</body>
+</html>

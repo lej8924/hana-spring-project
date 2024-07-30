@@ -1,0 +1,5 @@
+package net.daum.dao;
+
+public class Test2DAOImpl implements Test2DAO {
+
+}

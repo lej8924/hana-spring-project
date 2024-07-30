@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>타임리프</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+
+ <h1 th:text="${now}"></h1>
+ <h2 th:text="${#dates.format(now,'yyyy-MM-dd')}"></h2>
+ 
+ <div th:with="timeValue=${#dates.createToday()}"> <!-- th:with 타임리프 속성으로 timeValue라는 지역변수를 선언함. 이 지역변수
+ div태그내에서만 유효하다. -->
+  <p>[[${timeValue}]]</p>
+ </div>
+ 
+ <h1 th:text="${price}"></h1>
+ <h2 th:text="${#numbers.formatInteger(price,3,'COMMA')}"></h2>
+ <!-- 세자리수 콤마로 표현 -->
+ 
+ <div th:with="priceValue=99.87654">
+    <p th:text="${#numbers.formatInteger(priceValue,3,'COMMA')}"></p>
+    <p th:text="${#numbers.formatDecimal(priceValue,5,10,'POINT')}"></p>
+    <!-- formatDecimal(표시 값, 최소 정수 자리수, 최소 소수 자리수,POINT는 구분자 .을 의미) -->
+ </div>
+ 
+ <h1 th:text="${title}"></h1>
+ <span th:utext="${#strings.replace(title,'s','<b>s</b>')}"></span>
+ <!-- title에 있는 영문자에서 s를 진하게 변경 -->
+ 
+ <ul>
+  <li th:each="str:${#strings.listSplit(title,' ')}">[[${str}]]</li> 
+ </ul>
+ 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

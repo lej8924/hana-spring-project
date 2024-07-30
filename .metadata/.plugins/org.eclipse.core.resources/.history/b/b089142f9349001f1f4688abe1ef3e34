@@ -1,0 +1,52 @@
+package net.daum;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import net.daum.dao.BoardRepository;
+import net.daum.vo.BoardVO;
+
+@SpringBootTest
+class Boot03ApplicationTests {
+
+	@Autowired
+	private BoardRepository boardRepo;
+	
+	@Test
+	public void testInsert20() {
+		
+		for(int i=1;i<=20;i++) {
+			BoardVO b=new BoardVO();
+			
+			b.setWriter("user0"+ (i%10));
+			b.setTitle("게시판 제목...:" + i);
+			b.setContent("내용..."+i);
+			
+			//this.boardRepo.save(b);
+		}
+	}//샘플 더미데이터 20개 저장
+	
+	@Test
+	public void testByTitle() {
+      //자바 8이후의 람다식
+	  //this.boardRepo.findBoardVOByTitle("게시판 제목...:17").forEach(b -> System.out.println(b));
+		
+	  //자바 8 이전
+	  List<BoardVO> blist	
+	}//testByTitle()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+<html xmlns:th="http://www.thymeleaf.org" >
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="./css/th.css" /> 
+  </head>
+  <body>
+   <h1>ThymeLeaf 연습 페이지</h1>
+   <h2 class="thymeLeaf_css" th:text="${greeting2}"></h2>
+   <hr/>
+   
+  </body>
+</html>

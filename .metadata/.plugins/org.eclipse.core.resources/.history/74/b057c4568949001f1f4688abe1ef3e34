@@ -1,0 +1,27 @@
+package net.daum;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import net.daum.dao.BoardRepository;
+import net.daum.vo.BoardVO;
+
+@SpringBootTest
+class Boot02ApplicationTests {
+
+	@Autowired
+	private BoardRepository boardRepo;
+
+	@Test
+	public void testInsert() {
+		BoardVO b=new BoardVO();
+		
+		b.setWriter("홍길동");
+		b.setTitle("게시판 제목입니다.");
+		b.setContent("게시판 내용입니다.");
+		
+		this.boardRepo.save(b);//저장
+	}//레코드 저장
+
+}

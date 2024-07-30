@@ -1,0 +1,28 @@
+package net.daum.dao;
+
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import net.daum.vo.BoardVO;
+
+public interface BoardRepository extends JpaRepository<BoardVO, Integer> {
+
+	public List<BoardVO> findBoardVOByTitle(String title);//쿼리메서드가 find+엔티티빈클래스명+By+컬럼명 =>제목으로 검색
+	
+	public Collection<BoardVO> findByWriter(String writer);//쿼리메서드가 findBy+엔티티빈변수명
+	
+	public Collection<BoardVO> findByWriterContaining(String writer);//글쓴이에 대한 like % 검색어 % => '%'+검색어+'%'
+	//sql문에서 %와일드 카드는 하나이상의 임의의 모르는 문자와 매핑대응, _와일드카드는 하나의 모르는 문자와 매핑대응
+	/*
+	 * like 쿼리메서드 형태종류
+	 * 형태       쿼리메서드
+	 * 검색어+'%' StartingWith
+	 * '%'+검색어 EndingWith
+	 * '%'+검색어+'%' Containing
+	 */
+	
+	public Collection<BoardVO> findByTitleContainingOrContentContaining(String title, String cont);
+	//'%'+제목검색어+'%' + Or + '%'+내용검색어+'%'
+}

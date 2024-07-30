@@ -1,0 +1,45 @@
+package net.daum.controller;
+
+import java.io.File;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+@Controller
+public class UploadController {
+
+	//동기식 파일첨부 뷰페이지
+	@GetMapping("/uploadForm")
+	public void uploadForm() {
+		//리턴 타입이 없는 void형이면 매핑주소인 uploadForm이 뷰페이지 파일명이 된다.
+	}//uploadForm()
+	
+	@PostMapping("/uploadFormAction")
+	public void uploadFormAction(MultipartFile[] uploadFile, HttpServletRequest request) {
+		/* uploadFile 매개변수명과 input type="file"의 네임피라미터 이름이 같아야 한다. 
+		 */
+		String uploadFolder = request.getSession().getServletContext().getRealPath("upload");//첨부된 실제 이진파일이 업로드
+		//될 실제 upload경로를 구함
+		System.out.println("실제 업로드 경로 : "+uploadFolder);
+		
+		for(MultipartFile multipartFile : uploadFile) {
+			System.out.println("========================>");
+			System.out.println("upload file name :"+ multipartFile.getOriginalFilename());
+			System.out.println("upload file size :"+ multipartFile.getSize());
+			
+			File saveFile = new File(uploadFolder, multipartFile.getOriginalFilename());
+			
+			try {
+				multipartFile.transferTo(saveFile);//upload폴더에 실제첨부된 파일 업로드 함
+			}catch(Exception e) {e.printStackTrace();}
+		}//향상된 확장 for
+		
+	}//uploadFormAction()
+}
+
+
+

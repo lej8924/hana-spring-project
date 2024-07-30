@@ -1,0 +1,8 @@
+package net.daum.vo;
+
+import lombok.Setter;
+
+@Setter 
+public class BoardVO {
+
+}

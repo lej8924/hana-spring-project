@@ -1,0 +1,151 @@
+package net.daum;
+
+import java.util.Arrays;
+import java.util.Collection;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import net.daum.dao.BoardRepository;
+import net.daum.vo.BoardVO;
+
+@SpringBootTest
+class Boot03ApplicationTests {
+
+	@Autowired
+	private BoardRepository boardRepo;
+
+	@Test
+	public void testInsert20() {
+
+		for(int i=1;i<=20;i++) {
+			BoardVO b=new BoardVO();
+
+			b.setWriter("user0"+ (i%10));
+			b.setTitle("게시판 제목...:" + i);
+			b.setContent("내용..."+i);
+
+			//this.boardRepo.save(b);
+		}
+	}//샘플 더미데이터 20개 저장
+
+	@Test
+	public void testByTitle() {
+		//자바 8이후의 람다식
+		//this.boardRepo.findBoardVOByTitle("게시판 제목...:17").forEach(b -> System.out.println(b));
+
+		//자바 8 이전
+		/* List<BoardVO> blist = this.boardRepo.findBoardVOByTitle("게시판 제목...:17");
+
+	  if(blist != null && blist.size() > 0) {
+		  for(int i=0;i<blist.size();i++) {
+			  System.out.println(blist.get(i));
+		  }
+	  }else {
+		  System.out.println("해당 자료가 없습니다!");
+	  }*/
+	}//testByTitle()
+
+	@Test
+	public void testByWriter() {
+
+		/*Collection<BoardVO> blist = this.boardRepo.findByWriter("user00");
+
+		blist.forEach(b->{
+			System.out.println(b);
+		});*/
+	}//testByWriter() => 글쓴이로 검색
+
+	//글쓴이에 05가 포함된 게시물을 검색 => '%'+05+'%' like 검색
+	@Test
+	public void testByWriterContaining() {
+
+		//Collection<BoardVO> blist = this.boardRepo.findByWriterContaining("05");
+		//blist.forEach(b -> System.out.println(b));
+	}//testByWriterContaining()
+	
+	@Test
+	public void testByTitleOrContentContaining() {
+		
+		//Collection<BoardVO> blist = this.boardRepo.findByTitleContainingOrContentContaining("2", "5");
+		//blist.forEach(b -> System.out.println(b));
+	}//제목에 '2'가 포함되거나 내용에 '5'가 포함된 게시물을 검색
+	
+	@Test
+	public void testByTitleAndBno() {
+		
+		//Collection<BoardVO> blist = this.boardRepo.findByTitleContainingAndBnoGreaterThan("5", 5);
+		//blist.forEach(b -> System.out.println(b));
+	}//제목에 5가 포함되어 있고 게시판 번호가 5보다 큰 자료검색
+	
+    @Test
+    public void testBnoOrderByDesc() {
+    	
+    	//Collection<BoardVO> blist = this.boardRepo.findByBnoGreaterThanOrderByBnoDesc(10);
+    	//blist.forEach(b -> System.out.println(b));
+    }//bno가 10보다 큰 자료를 내림차순 정렬
+    
+    @Test
+    public void testByTitle2() {    
+    	//this.boardRepo.findByTitle("제목").forEach(b->System.out.println(b));
+    }//제목이 들어간 title검색
+    
+    @Test
+    public void testByContent2() {
+        //this.boardRepo.findByContent("내용").forEach(b -> System.out.println(b));	
+    }//@Param("content") 내용에 대한 검색처리
+    
+    @Test
+    public void testByTitle3() {
+    	this.boardRepo.findByTitle2("제목").forEach(arr->System.out.println(Arrays.toString(arr)));
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
